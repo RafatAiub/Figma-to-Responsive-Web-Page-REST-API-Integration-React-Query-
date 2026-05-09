@@ -11,78 +11,96 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="grid flex-1 items-center gap-14 px-2 py-16 md:px-4 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:py-20"
+      className="relative grid min-h-[80vh] flex-1 items-center gap-16 px-2 py-20 md:px-4 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12"
     >
-      <div className="max-w-2xl">
-        <p className="inline-flex items-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100">
+      <div className="z-10 max-w-3xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-2 text-[10px] font-bold tracking-[0.4em] text-cyan-400 uppercase">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-500"></span>
+          </span>
           {heroLabel}
-        </p>
-        <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          {heroHeading}
+        </div>
+        
+        <h1 className="mt-8 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          {heroHeading.split(' ').map((word, i) => (
+            <span key={i} className={i > 5 ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500" : ""}>
+              {word}{' '}
+            </span>
+          ))}
         </h1>
-        <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+        
+        <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-400 sm:text-xl">
           {heroBody}
         </p>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-12 flex flex-wrap gap-4">
           {heroActions.map(({ label, href, primary }) => (
             <a
               key={label}
               href={href}
-              className={`inline-flex items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition ${
+              className={`group relative overflow-hidden rounded-full px-8 py-4 text-sm font-bold tracking-wide transition-all ${
                 primary
-                  ? 'bg-white text-slate-950 hover:bg-slate-200'
-                  : 'border border-white/15 bg-white/5 text-white hover:bg-white/10'
+                  ? 'bg-white text-slate-950 hover:bg-cyan-50'
+                  : 'border border-white/10 bg-white/5 text-white hover:bg-white/10'
               }`}
             >
-              {label}
+              <span className="relative z-10">{label}</span>
+              {primary && (
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-cyan-200 to-white transition-transform group-hover:translate-x-0" />
+              )}
             </a>
           ))}
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-16 flex flex-wrap gap-12 border-t border-white/10 pt-10">
           {heroStats.map(({ value, label }) => (
-            <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <div className="text-2xl font-semibold text-white">{value}</div>
-              <div className="mt-1 text-sm text-slate-400">{label}</div>
+            <div key={label} className="flex flex-col">
+              <div className="text-3xl font-bold text-white">{value}</div>
+              <div className="mt-1 text-xs font-medium tracking-widest text-slate-500 uppercase">{label}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="relative">
-        <div className="absolute -left-6 top-10 h-24 w-24 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden="true" />
-        <div className="absolute -right-8 bottom-6 h-28 w-28 rounded-full bg-fuchsia-400/15 blur-3xl" aria-hidden="true" />
-
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/70 p-4 shadow-[0_30px_90px_rgba(2,6,23,0.55)] backdrop-blur">
-          <div className="rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,_rgba(14,165,233,0.18),_rgba(15,23,42,0.95))] p-5">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-sm uppercase tracking-[0.28em] text-cyan-100/70">Launch preview</p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">A polished hero area</h2>
+      <div className="relative lg:mt-0">
+        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-3xl" aria-hidden="true" />
+        
+        <div className="relative space-y-6">
+          <div className="glass rounded-3xl p-6 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-white/5 pb-4">
+              <div className="flex gap-1.5">
+                <div className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
+                <div className="h-2.5 w-2.5 rounded-full bg-amber-500/50" />
+                <div className="h-2.5 w-2.5 rounded-full bg-emerald-500/50" />
               </div>
-              <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-200">
-                Live
-              </span>
+              <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Network_Optimizer.sh</div>
             </div>
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {heroFeatureCards.map(({ title, copy }) => (
-                <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="text-sm font-semibold text-white">{title}</div>
-                  <div className="mt-2 text-sm leading-6 text-slate-300">{copy}</div>
+            
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              {heroFeatureCards.map(({ title, copy }, i) => (
+                <div key={title} className={`rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] ${i === 0 ? 'ring-1 ring-cyan-500/30' : ''}`}>
+                  <div className="text-xs font-bold text-white uppercase tracking-tighter">{title}</div>
+                  <div className="mt-2 text-[11px] leading-relaxed text-slate-400">{copy}</div>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-              <div className="flex items-center justify-between text-sm text-slate-300">
-                <span>Reading flow</span>
-                <span>Optimized</span>
+          <div className="glass flex items-center justify-between rounded-3xl p-6 shadow-2xl">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-fuchsia-500/10 text-fuchsia-400 ring-1 ring-fuchsia-500/20">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-[84%] rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-300" />
+              <div>
+                <div className="text-sm font-bold text-white">Edge Deployment</div>
+                <div className="text-[10px] text-slate-400">Deployed globally in 142ms</div>
               </div>
+            </div>
+            <div className="h-1.5 w-24 overflow-hidden rounded-full bg-white/10">
+              <div className="h-full w-2/3 bg-gradient-to-r from-fuchsia-500 to-cyan-400" />
             </div>
           </div>
         </div>

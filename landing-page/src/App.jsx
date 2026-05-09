@@ -7,21 +7,26 @@ import { Footer } from './components/Footer.jsx'
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.18),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(244,114,182,0.12),_transparent_24%),linear-gradient(180deg,_rgba(2,6,23,0.82),_rgba(2,6,23,1))]"
-      />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/10" />
+    <div className="relative min-h-screen selection:bg-cyan-500/30 selection:text-white">
+      {/* Dynamic Background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[#020617]" />
+        <div className="animate-mesh absolute left-[-10%] top-[-10%] h-[120%] w-[120%] bg-[radial-gradient(circle_at_20%_30%,_rgba(56,189,248,0.15)_0%,_transparent_50%),radial-gradient(circle_at_80%_70%,_rgba(168,85,247,0.1)_0%,_transparent_50%)] opacity-70" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] brightness-100 contrast-150" />
+      </div>
 
-      <main className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-10 pt-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex flex-col pt-6">
         <Header />
-        <Hero />
-        <Services />
-        <About />
-        <Contact />
+        
+        <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Hero />
+          <Services />
+          <About />
+          <Contact />
+        </main>
+
         <Footer />
-      </main>
+      </div>
     </div>
   )
 }

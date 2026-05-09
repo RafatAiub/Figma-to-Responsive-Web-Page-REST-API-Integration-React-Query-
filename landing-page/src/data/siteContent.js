@@ -10,56 +10,63 @@ import {
 export const navigationLinks = ['Home', 'Services', 'About', 'Contact']
 
 export const brand = {
-  name: 'Northstar',
-  subtitle: 'Creative landing pages',
+  name: 'Lumina',
+  subtitle: 'Digital Excellence',
 }
 
-export const heroLabel = 'Agency-quality by design'
+export const heroLabel = 'Next-Generation Web Experiences'
 export const heroHeading =
-  'Elevate your digital presence with agency-grade design.'
+  'We architect digital products that define industries.'
 export const heroBody =
-  'We transform complex written briefs into high-performance, responsive web experiences. Our focus is on precision, speed, and a premium visual finish that commands attention.'
+  'Lumina is a boutique digital agency specializing in high-performance web applications and brand identities. We merge technical precision with artistic vision to deliver websites that don’t just look good—they dominate.'
 
 export const heroActions = [
-  { label: 'Start Project', href: '#contact', primary: true },
-  { label: 'View Services', href: '#services', primary: false },
+  { label: 'Start a Project', href: '#contact', primary: true },
+  { label: 'Explore Our Work', href: '#services', primary: false },
 ]
 
 export const heroStats = [
-  { value: '100%', label: 'Responsive Design' },
-  { value: 'Sub-1s', label: 'Load Performance' },
-  { value: 'A+', label: 'Design Quality' },
+  { value: '150+', label: 'Projects Delivered' },
+  { value: '99.9%', label: 'Uptime Reliability' },
+  { value: '24ms', label: 'Average Latency' },
 ]
 
 export const heroFeatureCards = [
-  { title: 'Conversion', copy: 'Clear CTA flow' },
-  { title: 'Responsive', copy: 'Stacks beautifully on mobile' },
-  { title: 'Speed', copy: 'Utility-first styling' },
-  { title: 'Quality', copy: 'Agency-level finish' },
+  { title: 'UX/UI Design', copy: 'Intuitive user flows that maximize retention.' },
+  { title: 'Web Performance', copy: 'Sub-second load times for peak SEO.' },
+  { title: 'Cloud Scale', copy: 'Infrastructure built to handle millions.' },
+  { title: 'Brand Strategy', copy: 'Positioning that cuts through the noise.' },
 ]
 
 export const services = [
   {
-    title: 'Strategy Design',
+    title: 'Strategic Consulting',
     description:
-      'Clear positioning, content direction, and conversion-focused structure shaped for modern brands.',
+      'We dive deep into your business model to identify growth levers and digital opportunities that competitors miss.',
     icon: ShieldIcon,
+    tag: 'Analysis'
   },
   {
-    title: 'Interface Build',
+    title: 'Immersive Interfaces',
     description:
-      'Polished, responsive layouts with sharp hierarchy, smooth spacing, and performance-first implementation.',
+      'Our designs are more than just pixels. We create interactive experiences that guide users toward conversion with fluid motion.',
     icon: SparkIcon,
+    tag: 'Creative'
   },
   {
-    title: 'Growth Support',
+    title: 'Full-Stack Engineering',
     description:
-      'Launch-ready pages with room to scale, iterate, and adapt as the product or campaign evolves.',
+      'Clean code is our baseline. We build robust, scalable architectures using the latest modern frameworks and edge computing.',
     icon: GrowthIcon,
+    tag: 'Development'
   },
 ]
 
-export const aboutHighlights = ['Responsive', 'Tailwind-only', 'Deployment-ready']
+export const aboutHighlights = [
+  'Zero Technical Debt',
+  'Mobile-First Architecture',
+  'Edge-Optimized Assets'
+]
 
 export const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com', icon: LinkedInIcon },

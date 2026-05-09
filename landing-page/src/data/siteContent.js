@@ -16,19 +16,19 @@ export const brand = {
 
 export const heroLabel = 'Agency-quality by design'
 export const heroHeading =
-  'Build a landing page that feels sharp, modern, and ready to convert.'
+  'Elevate your digital presence with agency-grade design.'
 export const heroBody =
-  'We translate written briefs into clean, responsive interfaces with strong hierarchy, subtle motion, and a premium visual finish that works across mobile, tablet, and desktop.'
+  'We transform complex written briefs into high-performance, responsive web experiences. Our focus is on precision, speed, and a premium visual finish that commands attention.'
 
 export const heroActions = [
-  { label: 'Primary Button', href: '#services', primary: true },
-  { label: 'Secondary Button', href: '#about', primary: false },
+  { label: 'Start Project', href: '#contact', primary: true },
+  { label: 'View Services', href: '#services', primary: false },
 ]
 
 export const heroStats = [
-  { value: '98%', label: 'Responsive score' },
-  { value: '24h', label: 'Fast turnaround' },
-  { value: '5-star', label: 'Client-ready polish' },
+  { value: '100%', label: 'Responsive Design' },
+  { value: 'Sub-1s', label: 'Load Performance' },
+  { value: 'A+', label: 'Design Quality' },
 ]
 
 export const heroFeatureCards = [

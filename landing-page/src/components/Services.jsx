@@ -14,13 +14,13 @@ export function Services() {
         {services.map(({ title, description, icon: Icon }) => (
           <article
             key={title}
-            className="group rounded-[1.75rem] border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.07]"
+            className="group relative rounded-[1.75rem] border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-white/[0.08] hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/12 text-cyan-200 ring-1 ring-cyan-300/15">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/12 text-cyan-300 ring-1 ring-cyan-300/20 group-hover:bg-cyan-400/20 group-hover:ring-cyan-300/40 transition-colors">
               <Icon />
             </div>
-            <h3 className="mt-5 text-xl font-semibold text-white">{title}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-300">{description}</p>
+            <h3 className="mt-5 text-xl font-semibold text-white group-hover:text-cyan-50 transition-colors">{title}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-300 group-hover:text-slate-200 transition-colors">{description}</p>
           </article>
         ))}
       </div>
